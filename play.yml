@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
    - name: shell command
-     shell: 'ls -ltr'
+     shell: "ls -ltr"
      register: output
 
    - debug:

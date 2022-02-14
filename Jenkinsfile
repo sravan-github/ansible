@@ -16,11 +16,10 @@ pipeline {
         }
         stage('playbook') {
             steps {
-                sh '''
+                bash '''
+                #!/bin/bash
                 chmod +x play.yml
-                ls -ltr
-                ansible --version
-                ansible-playbook play.yml
+                ansible-playbook -vvv play.yml
                 '''
             }
           }

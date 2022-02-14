@@ -17,9 +17,10 @@ pipeline {
         stage('playbook') {
             steps {
                 sh '''
+                chmod +x play.yml
                 ls -ltr
                 ansible --version
-                #ansible-playbook play.yml
+                ansible-playbook play.yml
                 '''
             }
           }

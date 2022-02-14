@@ -16,7 +16,7 @@ pipeline {
         }
         stage('playbook') {
             steps {
-                bash '''
+                sh '''
                 #!/bin/bash
                 chmod +x play.yml
                 ansible-playbook -vvv play.yml

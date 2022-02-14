@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+   - name: shell command
+     shell: 'ls -ltr'
+     register: output
+
+   - debug:
+     var: output.stdout_lines

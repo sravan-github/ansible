@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                ansible-playbook -i hosts play.yml
+                ansible-playbook play.yml
                 '''
             }
           }

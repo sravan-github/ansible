@@ -22,7 +22,7 @@ pipeline {
                 sh '''
                 #!/bin/bash
                 #ansible-playbook play.yml
-                ansible-playbook -i hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
+                ansible-playbook --private-key=$ANSIBLE_PRIVATE_KEY play.yml
                 '''
             }
           }

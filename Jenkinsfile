@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+   ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
+  }
     /*
     agent {
         docker { image 'sravangcpdocker/terraform:7' }
@@ -18,7 +21,8 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                ansible-playbook play.yml
+                #ansible-playbook play.yml
+                ansible-playbook -i hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
                 '''
             }
           }

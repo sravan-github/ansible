@@ -1,9 +1,15 @@
----
-- hosts: localhost
+--
+- hosts: all
+  become: yes
   tasks:
-   - name: shell command
-     shell: "ls -ltr"
-     register: output
+    - name: Run shell
+      shell: uptime
+      register: out
 
-   - debug:
-     var: output.stdout_lines
+    - debug: var=out.stdout_lines
+
+    - name: run shell
+      shell: hostname
+      register: host
+
+    - debug: var=host.stdout_lines

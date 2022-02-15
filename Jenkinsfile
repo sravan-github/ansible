@@ -18,8 +18,7 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                chmod +x play.yml
-                ansible-playbook -vvv play.yml
+                ansible-playbook -i hosts play.yml
                 '''
             }
           }
